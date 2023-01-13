@@ -1,0 +1,93 @@
+# Obtiene las completaciones del editor basadas en el esquema de configuración
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserta una línea en blanco entre los prompts del intérprete de comandos
+add_newline = false
+
+# Reemplaza el símbolo "❯" en el prompt por "➜"
+[character] # El nombre del módulo que estamos configurando es "character"
+success_symbol = "[➜](bold green)" # El segmento "success_symbol" se está oonfigurando es "➜" con el color "bold green"
+
+
+
+#################################3
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[directory]
+read_only = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+[python]
+symbol = " "
+style = "yellow"
+
+[spack]
+symbol = "🅢 "
+
+[rust]
+symbol = " "
+
+[lua]
+symbol = " "
+
+####################333
+[hostname]
+ssh_only = false
+format = "[$hostname](bold green) "
+trim_at = ".companyname.com"
+disabled = false
+

@@ -1,0 +1,31 @@
+--[[
+  ██╗███╗   ██╗██╗████████╗██╗     ██╗   ██╗ █████╗
+  ██║████╗  ██║██║╚══██╔══╝██║     ██║   ██║██╔══██╗
+  ██║██╔██╗ ██║██║   ██║   ██║     ██║   ██║███████║
+  ██║██║╚██╗██║██║   ██║   ██║     ██║   ██║██╔══██║
+  ██║██║ ╚████║██║   ██║██╗███████╗╚██████╔╝██║  ██║
+  ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝
+Neovim init file
+--]]
+
+----------------------------------------------------
+-- Import Lua modules
+----------------------------------------------------
+
+require('settings')							      -- settings
+require('keymaps')							      -- keymaps
+require('plugins/packer')				      -- plugin manager
+
+
+require('plugins/treesitter')		      -- treesitter interface
+require('plugins/onedark')        -- colorscheme
+require('plugins/tokyo_night')            -- lualine
+require('plugins/color_highlight')    -- color highlights
+require('plugins/bufferline')         -- bufferline
+require('plugins/autopairs')          -- autopairs
+require('plugins/blackline')          -- blackline
+
+local lsp = require('lsp-zero')
+lsp.preset('recommended')
+lsp.nvim_workspace()
+lsp.setup()
