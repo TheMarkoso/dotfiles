@@ -13,3 +13,14 @@ map('i', '<C-j>', '<down>', default_opts)
 map('i', '<C-k>', '<up>', default_opts)
 map('i', '<C-l>', '<right>', default_opts)
 
+
+-- nvim-tree
+map('n', '<C-n>', ':Neotree toggle<CR>', default_opts)       -- open/close
+
+
+-- cokeline
+map('n', '<S-Tab>',   '<Plug>(cokeline-focus-prev)',  { silent = true })
+map('n', '<Tab>',     '<Plug>(cokeline-focus-next)',  { silent = true })
+map('n', '<Leader>p', '<Plug>(cokeline-switch-prev)', { silent = true })
+map('n', '<Leader>n', '<Plug>(cokeline-switch-next)', { silent = true })
+

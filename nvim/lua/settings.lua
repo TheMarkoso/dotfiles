@@ -9,6 +9,7 @@ opt.listchars:append "eol:↴"
 o.termguicolors = true
 opt.mouse = "a"
 opt.swapfile = false
+opt.guifont = "JetBrainsMono Nerd Font"
 
 -- Number of screen lines to keep above and below the cursor
 o.scrolloff = 8
@@ -38,3 +39,6 @@ o.smartcase = true
 -- Better buffer splitting
 o.splitright = true
 o.splitbelow = true
+
+
+g.mapleader = ','

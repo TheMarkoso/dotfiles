@@ -21,9 +21,10 @@ require('plugins/treesitter')		      -- treesitter interface
 require('plugins/onedark')        -- colorscheme
 require('plugins/tokyo_night')            -- lualine
 require('plugins/color_highlight')    -- color highlights
-require('plugins/bufferline')         -- bufferline
+require('plugins/cokeline')         -- bufferline
 require('plugins/autopairs')          -- autopairs
 require('plugins/blackline')          -- blackline
+require('plugins/neotree')            -- Neo tree
 
 local lsp = require('lsp-zero')
 lsp.preset('recommended')
