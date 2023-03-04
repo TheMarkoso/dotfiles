@@ -1,5 +1,4 @@
 vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
-vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
 
 -- If you want icons for diagnostic errors, you'll need to define them somewhere:
 vim.fn.sign_define("DiagnosticSignError",
