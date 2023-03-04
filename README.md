@@ -1,3 +1,12 @@
+# Dotfiles & Configs
+
+# Indice
+- [Resumen](#resumen)
+- [Instalacion de Arch Linux](#instalacion-de-arch-linux)
+- [Atajos de teclado](#atajos-de-teclado)
+  - [Ventanas](#ventanas)
+  - [Apps](#apps)
+
 # Resumen
 
 Esta guia es una recopilacion de pasos a seguir para construir mi entorno de escritorio a partir de una instalacion de limpia de Arch Linux. Esto no es una guia para cualquiera, la e escrito pensando principalmente en mi mismo y asi poder replicarla en un futuro. Por favor, disculpa mi mala forma de documentar soy novato en esto.
@@ -121,3 +130,40 @@ sudo systemctl start NetworkManager.service
 sudo systemctl enable NetworkManager.service
 ```
 
+# Atajo de teclado
+
+Estos son algunos atajos de teclado que uso en mi gestor de ventanas
+
+## Ventanas
+
+
+| Atajo                   | Acción                                       |
+| ----------------------- | -------------------------------------------- |
+| **mod + l**             | siguiente ventana                            |
+| **mod + h**             | ventana previa                               |
+| **mod + shift + h**     | mover ventana izquierda                      |
+| **mod + shift + l**     | mover ventana deecha                         |
+| **mod + shift + j**     | mover ventana abajo                          |
+| **mod + shift + k**     | mover ventana arriba                         |
+| **mod + tab**           | cambiar la disposición de las ventanas       |
+| **mod + [1-6]**         | cambiar al espacio de trabajo N (1-6)        |
+| **mod + shift + [1-6]** | mandar ventana al espacio de trabajo N (1-6) |
+| **mod + w**             | cerrar ventana                               |
+| **mod + ctrl + r**      | reiniciar gestor de ventana                  |
+| **mod + ctrl + q**      | cerrar sesión                                |
+
+
+## Apps
+
+Los siguiente atajos de teclado funcionaran solo si instalas lo programas que lanzan:
+
+```bash
+sudo pacman -S rofi kitty redshift bettelockscreen
+```
+| Atajo               | Acción                                 |
+| ------------------- | -------------------------------------- |
+| **mod + space**     | lanzar rofi                            |
+| **mod + return**    | lanzar terminal (kitty)                |
+| **mod + r**         | redshift                               |
+| **mod + shift + r** | parar redshift                         |
+| **mod + g**         | bloquear pantalla (bettelockscreen)    |
