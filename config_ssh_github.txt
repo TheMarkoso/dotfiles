@@ -1,0 +1,5 @@
+para usar la autenticacion por ssh al momento de hacer push, debemos hacer lo siguiente:
+
+$ git remote set-url origin git@github.com:<user>/<name_repo>
+$ git branch -M main (cambia el nombre de la rama principal a main)
+$ git push origin main (ahora puede hacer push en paz)

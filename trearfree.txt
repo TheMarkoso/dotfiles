@@ -1,0 +1,11 @@
+Esta es la explicacion de como solucionar el screen tearing en arch linux
+
+debes tener instalado [xf86-video-amdgpu]
+te diriges a "/etc/X11/xorg.conf.d/"
+si hay algo lo borras y creas el archivo 20-amdgpu.conf
+le pegas esto:
+Section "Device"
+        Identifier      "AMD Graphics"
+        Driver          "amdgpu"
+        Option          "TearFree" "true"
+EndSection
