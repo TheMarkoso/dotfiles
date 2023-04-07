@@ -20,6 +20,9 @@ return require('packer').startup(function(use)
 	-- Automatically set up your configuration after clonning packer.nvim
 	-- Put this at the after all plugins
 
+  -- sqls
+  use 'nanotee/sqls.nvim'
+
   -- ToggleTem
   use {"akinsho/toggleterm.nvim", tag = '*', config = function()
     require("toggleterm").setup()

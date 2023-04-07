@@ -195,6 +195,11 @@ _G.packer_plugins = {
     path = "/home/markoso17/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["sqls.nvim"] = {
+    loaded = true,
+    path = "/home/markoso17/.local/share/nvim/site/pack/packer/start/sqls.nvim",
+    url = "https://github.com/nanotee/sqls.nvim"
+  },
   ["toggleterm.nvim"] = {
     config = { "\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0" },
     loaded = true,
