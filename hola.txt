@@ -1,4 +1,0 @@
-esto es una prueba
-
-
-mine == sudo chowm -R markoso17 'fichero'

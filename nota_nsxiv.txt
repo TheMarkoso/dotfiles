@@ -1,8 +1,0 @@
-nsxiv -- thumbnail .  >>>  muestra todas las imagenes
-
-- La letra f cambia entre full srceen y ventana
-- Return cambia entre thumbnail mode / open select image mode
-
-ctrl + h, j, k, l 
-
-
