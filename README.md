@@ -1,6 +1,6 @@
 # Dotfiles
 
-![Qtile](/.screenshots/rice_qtile.png)
+![Qtile](/.screenshots/qtile_rice.png)
 
 
 
