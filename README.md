@@ -2,6 +2,9 @@
 
 ![Qtile](/.screenshots/qtile_rice.png)
 
+## Resumen
+
+Mi configuracion de Qtile esta montado sobre Arch linux, falta pulir mucho ya que aun no entiendo muchas cosas.👹
 
 
 # Atajo de teclado
