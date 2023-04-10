@@ -1,0 +1,8 @@
+set recolor
+set recolor-lightcolor \#0B1D22
+set default-bg \#0B1D22
+
+# set recolor-darkcolor   cambia el color de la letra 
+unmap f
+map f toogle_fullscreen
+map [fullscreen] f toogle_fullscreen
