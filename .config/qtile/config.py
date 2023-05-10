@@ -20,12 +20,14 @@ from libqtile.utils import guess_terminal
 from libqtile.dgroups import simple_key_binder
 from widgets.volume_text import VolumeText
 from widgets.battery_text import BatteryText
+from tenet import tenet
+from spotify import Spotify
 
 # VARIABLES
 mod = "mod4"                                # Sets mod key to SUPER/WINDOWS
 myTerm = "kitty"                            # My terminal of choice
 myBrowser = "google-chrome-stable"          # My browser of choice
-
+satan = tenet()
 
 # KEYBINDINGS
 keys = [
@@ -49,6 +51,7 @@ keys = [
     Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
+    Key([mod], "t", lazy.window.toggle_floating(), desc='Toggle floating'),
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with
@@ -63,6 +66,7 @@ keys = [
 
     # MY KEIBINDINGS
     Key([mod], "Return", lazy.spawn(myTerm), desc="Launch terminal"),
+    Key([mod, "shift"], "Return", lazy.spawn("cool-retro-term --fullscreen")),
     Key([mod], "space", lazy.spawn("rofi -show run"), desc="Abrir menu"),
     Key([mod], "b", lazy.spawn('firefox')),
     Key([mod], "g", lazy.spawn("betterlockscreen -l"), desc="lock screen"),
@@ -74,6 +78,7 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
 
     # ------------ Hardware Configs ------------
 
@@ -123,7 +128,7 @@ for i, group in enumerate(groups):
 # SETTINGS FOR LAYOUTS
 layout_conf = {
         'border_focus': '#2ac3de',
-        'border_normal': colors3[6],
+        'border_normal': ['#1a1b26','#1a1b26'], #6
         'border_width': 3,
         'margin': 6
         }
@@ -230,6 +235,11 @@ screens = [
         Screen(
             top=bar.Bar(
                 [
+                # widget.KhalCalendar(),
+                widget.Image(
+                    filename='~/Descargas/pentagram_red.png',
+                    mouse_callbacks={"Button1": lazy.spawn("notify-send '{0}\n HAIL SATAN!'".format(tenet()))},
+                    ),
                 widget.GroupBox(
                     font='JetBrainsMono Nerd Font',
                     fontsize=16,
@@ -237,12 +247,13 @@ screens = [
                     highlight_method="block",
                     highlight_color=["000000", "#1a1b26"],
                     ),
-                widget.CurrentLayout(),
+                # widget.CurrentLayout(),
                 widget.CurrentLayoutIcon(
                     custom_icon_paths=[os.path.expanduser("~/.config/qtile/icons")],
                     scale=0.9,
                     use_mask=True,
                     ),
+                Spotify(),
                 widget.Spacer(),
                 widget.Clock(
                     format='%H:%M:%S',
@@ -354,7 +365,7 @@ screens = [
 
                     ],
                 24,
-                opacity=0.9,
+                opacity=0.83,
                 ),
             ),
         ]

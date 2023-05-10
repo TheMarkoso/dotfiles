@@ -119,3 +119,14 @@ alias nv='nvim'
 
 alias ns='nsxiv'
 alias nst='nsxiv --thumbnail'
+
+
+alias py='python3'
+
+# CREA UN ENTORNO VIRTUAL
+alias pyvenv='python3 -m venv venv'
+alias avenv='. venv/bin/activate'
+
+
+alias 3ds='nohup flatpak run org.citra_emu.citra &'
+alias gamecube='nohup dolphin-emu &'
