@@ -1,0 +1,73 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+
+  "logo" : {
+  	"source": "~/.config/fastfetch/img/zendaya.jpg",
+	"type": "kitty",
+	"height": 16,
+	"padding": {
+		"top": 1,
+		"left": 2,
+		"right": 2,
+	},
+  },
+
+  "display": {
+	  "separator": " -  ",
+  },
+  "modules": [
+
+    "break",
+    "break",
+    "break",
+    {
+	    "type": "title",
+	    "key": " ",
+    },
+    "break",
+    {
+	    "type": "os",
+	    "key": " ",
+    },
+    {
+	    "type": "de",
+	    "key": " ",
+    },
+    {
+	    "type": "terminal",
+	    "key": " ",
+    },
+    {
+	    "type": "shell",
+	    "key": " ",
+    },
+    {
+	    "type": "packages",
+	    "key": " ",
+    },
+    {
+	    "type": "uptime",
+	    "key": " ",
+    },
+    {
+	    "type": "custom",
+	    "key": " ",
+	    "format": "github.com/TheMarkoso",
+    },
+
+    "break",
+    "colors"
+    /*
+    USR:
+    OS:
+    WM:
+    TERM:
+    SHELL:
+    PKGS:
+    UPTIME:
+    MEM:
+    GITHUB:
+    BLOG:
+    */
+  ]
+}
