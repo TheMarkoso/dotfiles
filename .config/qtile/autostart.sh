@@ -10,5 +10,6 @@ else
 fi
 
 picom &
+udiskie -t &
 # Wallpaper
-feh --bg-fill ~/Wallpapers/white-girl.jpg &
+feh --bg-fill ~/Wallpapers/hollow.png &
