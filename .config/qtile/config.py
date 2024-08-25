@@ -12,4 +12,3 @@ from modules.screens import *
 def autostart():
     home = os.path.expanduser('~')
     subprocess.Popen([home + '/.config/qtile/autostart.sh'])
-

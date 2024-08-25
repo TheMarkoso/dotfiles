@@ -4,37 +4,7 @@ from libqtile.lazy import lazy
 from modules.prefs import terminal, browser, file_manager, screenshot, screenshot_manual, rofi, lockscreen, redshift_on, redshift_off, volume_up, volume_down, volume_mute, light_up, light_down
 
 
-
-dots_terminal_sizes = {
-    'width': 500,
-    'height': 300,
-    'x': 100,
-    'y': 100
-}
-
-
-def dots_terminal(qtile):
-    #Abre una terminal
-    qtile.cmd_spawn("kitty")
-
-    #Activa el modo flotante en la ventana actual
-    qtile.current_window.toggle_floating()
-
-    #Ajusta el tamano de la ventana flotante
-    qtile.current_window.cmd_set_size_floating(
-        dots_terminal_sizes['width'],
-        dots_terminal_sizes['height'],
-    )
-
-    #Ajusta la posicion de la ventana
-    qtile.current_window.cmd_set_position_floating(
-        dots_terminal_sizes['x'],
-        dots_terminal_sizes['y'],
-    )
-
-
 keys = [
-    Key('M-d',                      lazy.function(dots_terminal),),
     # Switch between windows
     Key('M-h',                      lazy.layout.left(),                     desc='Move focus to left'),    
     Key('M-l',                      lazy.layout.right(),                    desc='Move focus to right'),    
