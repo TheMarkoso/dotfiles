@@ -3,6 +3,9 @@ local o = vim.o
 local opt = vim.opt
 local A = vim.api
 
+
+g.mapleader = ";"
+
 opt.list = true
 opt.listchars:append "space:⋅"
 opt.listchars:append "eol:↴"

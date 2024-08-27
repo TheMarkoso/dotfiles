@@ -2,22 +2,34 @@ import os
 from libqtile.config import Screen, Group, DropDown
 from libqtile import bar, qtile, widget, layout, extension
 from libqtile.lazy import lazy
-from modules.colors import colors as cl
+from modules.colors import tokyonight as cl
 from typing import List
 from libqtile.widget import spacer
 
 
+
+# color def
+dark = cl[0]
+grey = cl[1]
+light = cl[2]
+text = cl[3]
+focus = cl[4]
+inactive = cl[5]
+urgent = cl[6]
+color1 = cl[7]
+color2 = cl[8]
+
 layout_theme = {"border_width": 2,
                 "margin": 4,
-                "border_focus": cl[14],
-                "border_normal": cl[2]
+                "border_focus": cl[4],
+                "border_normal": cl[1]
                 }
 
 floating_layout = layout.Floating(
         border_with = 2,
         margin = 6,
-        border_focus = cl[14],
-        border_normal = cl[2],
+        border_focus = cl[4],
+        border_normal = cl[1],
         )
 
 layouts = [
@@ -35,7 +47,7 @@ layouts = [
 #    background = cl[0]
 #)
 
-def base(fg=15, bg=0, fontsize=15, font='HackNerdFont', padding=3): 
+def base(fg=3, bg=0, fontsize=15, font='HackNerdFont', padding=3): 
     return {
         'foreground': cl[fg],
         'background': cl[bg],
@@ -146,13 +158,13 @@ def workspaces():
             borderwidth = 3,
             highlight_method = "line",
             rounded = True,
-            inactive = cl[2],
-            active = cl[15],
-            highlight_color = cl[9],
-            this_current_screen_border = cl[15],
-            this_screen_border = cl[15],
-            other_current_screen_border = cl[7],
-            other_screen_border = cl[7],
+            inactive = cl[1],
+            active = cl[5],
+            highlight_color = cl[3],
+            this_current_screen_border = cl[5],
+            this_screen_border = cl[5],
+            other_current_screen_border = cl[2],
+            other_screen_border = cl[2],
         ),
     ]
 
