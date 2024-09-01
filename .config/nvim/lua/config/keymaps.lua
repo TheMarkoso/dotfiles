@@ -33,10 +33,10 @@ map('v', '<a-j>', ":m '>+1<cr>gv=gv", { noremap = true, silent = true })
 map('v', '<a-k>', ":m '<-2<cr>gv=gv", { noremap = true, silent = true })
 
 -- moverse al siguiente buffer usando tab
-map('n', '<tab>', ':bufferlinecyclenext<cr>', { noremap = true, silent = true })
+map('n', '<tab>', ':BufferLineCyclePrev<cr>', { noremap = true, silent = true })
 
 -- moverse al buffer anterior usando shift+tab
-map('n', '<s-tab>', ':bufferlinecycleprev<cr>', { noremap = true, silent = true })
+map('n', '<s-tab>', ':BufferLineCyclePrev<cr>', { noremap = true, silent = true })
 
 
 -- Leader key mappings

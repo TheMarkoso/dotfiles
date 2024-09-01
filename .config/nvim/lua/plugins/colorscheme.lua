@@ -8,26 +8,26 @@
 --  end,
 --}
 
--- return {
---    "tiagovla/tokyodark.nvim",
---     lazy = false,
---     config = function()
---       vim.cmd[[colorscheme tokyodark]]
---     end,
--- }
-
 return {
-   "folke/tokyonight.nvim",
+   "tiagovla/tokyodark.nvim",
     lazy = false,
     config = function()
-      require("tokyonight").setup({
-        style = "night",
-        transparent = true,
-      })
-    vim.cmd[[colorscheme tokyonight]]
-    vim.cmd[[highlight Normal guibg=#0A0A0A]]
+      vim.cmd[[colorscheme tokyodark]]
     end,
 }
+
+--return {
+--   "folke/tokyonight.nvim",
+--    lazy = false,
+--    config = function()
+--      require("tokyonight").setup({
+--        style = "night",
+--        transparent = true,
+--      })
+--    vim.cmd[[colorscheme tokyonight]]
+--   -- vim.cmd[[highlight Normal guibg=#0A0A0A]]
+--    end,
+--}
 
 --return {
 --   "alexanderbluhm/black.nvim",

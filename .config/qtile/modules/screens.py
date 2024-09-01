@@ -10,7 +10,7 @@ from libqtile.widget import spacer
 
 # color def
 dark = cl[0]
-grey = cl[1]
+greys = cl[1]
 light = cl[2]
 text = cl[3]
 focus = cl[4]
@@ -18,18 +18,21 @@ inactive = cl[5]
 urgent = cl[6]
 color1 = cl[7]
 color2 = cl[8]
+color3 = cl[9]
+color4 = cl[10]
+color5 = cl[11]
 
 layout_theme = {"border_width": 2,
                 "margin": 4,
-                "border_focus": cl[4],
-                "border_normal": cl[1]
+                "border_focus": focus,
+                "border_normal": greys
                 }
 
 floating_layout = layout.Floating(
         border_with = 2,
         margin = 6,
-        border_focus = cl[4],
-        border_normal = cl[1],
+        border_focus = focus,
+        border_normal = greys,
         )
 
 layouts = [
@@ -57,69 +60,78 @@ def base(fg=3, bg=0, fontsize=15, font='HackNerdFont', padding=3):
     }
 
 
-def open_sep(): 
-    return  widget.TextBox(**base(), text = '[')
+def open_sep(fg): 
+    return  widget.TextBox(foreground=fg, background=cl[0], font='HackNerdFont', padding=3, fontsize=15, text = '[')
 
 
-def close_sep(): 
-    return  widget.TextBox(**base(), text = ']')
+def close_sep(fg): 
+    return  widget.TextBox(foreground=fg, background=cl[0], font='HackNerdFont', padding=3, fontsize=15, text = ']')
 
 
 def icon():
     return [
-        open_sep(),
-        widget.TextBox(**base(),text = '󰟪'),
-        close_sep()
+        open_sep(color1),
+        widget.TextBox(**base(fg=7),text = '󰟪'),
+        close_sep(color1)
     ]
 
 
 def cpu_info():
     return [
-        open_sep(),
-        widget.CPU(**base(), format=' CPU {load_percent}%'),
-        widget.ThermalSensor(**base(), format='󰔏 {temp:.0f}{unit} ', threshold=85, foreground_alert= '#FF0000'),
-        close_sep()
+        open_sep(focus),
+        widget.CPU(**base(fg=4), format=' CPU {load_percent}%'),
+        widget.ThermalSensor(**base(fg=4), format='󰔏 {temp:.0f}{unit} ', threshold=85, foreground_alert= '#FF0000'),
+        close_sep(focus)
     ]
 
 
 def memory():
     return [
-        open_sep(),
-        widget.Memory(**base(), format=' {MemUsed: .1f}{mm}', measure_mem='G'),
-        close_sep(),
+        open_sep(color4),
+        widget.Memory(**base(fg=10), format=' {MemUsed: .1f}{mm}', measure_mem='G'),
+        close_sep(color4)
     ]
 
 
 def net():
     return [
-        open_sep(),
-        widget.Net(**base(padding=5), format="󰈀 {down} ↓↑ {up}", perfix = "k"),
-        close_sep(),
+        open_sep(color5),
+        widget.Net(**base(fg=11, padding=5), format="󰈀 {down} ↓↑ {up}", perfix = "k"),
+        close_sep(color5)
     ] 
 
 
 def current_lay():
     return [
-        open_sep(),
-        widget.CurrentLayoutIcon(**base(), custom_icon_paths=[os.path.expanduser("~/.config/qtile/icons")], scale=0.7),
-        close_sep(),
+        open_sep(urgent),
+        #widget.CurrentLayoutIcon(**base(fg=6), custom_icon_paths=[os.path.expanduser("~/.config/qtile/icons")], scale=0.7),
+        widget.CurrentLayout(**base(fg=6)),
+        close_sep(urgent)
     ] 
 
 
 def volume():
     return [
-        open_sep(),
-        widget.TextBox(**base(), text = ' '),
-        widget.PulseVolume(**base(), limit_max_volume = "True"),
-        close_sep(),
+        open_sep(color3),
+        widget.TextBox(**base(fg=9), text = ' '),
+        widget.PulseVolume(**base(fg=9), limit_max_volume = "True"),
+        close_sep(color3)
+    ]
+
+
+def test():
+    return [
+        open_sep(cl[9]),
+        widget.CurrentLayout(**base(fg=6)),
+        close_sep(cl[9])
     ]
 
 
 def battery():
     return [
-        open_sep(),
+        open_sep(color2),
         widget.Battery(
-            **base(),
+            **base(fg=8),
             format='{char} {percent:2.0%}',
             full_char='󰁹', 
             charge_char='󰂄', 
@@ -131,24 +143,23 @@ def battery():
             notify_below=20, 
             show_short_text=False, 
         ),
-        close_sep(),
+        close_sep(color2)
     ] 
 
 
 
 def timedate():
     return [
-        open_sep(),
-        widget.TextBox(**base(), text = " "), 
-        widget.Clock(**base(), format="󰸗 %d %b, %Y 󰥔 %H:%M", mouse_callbacks={"Button1": lazy.spawn("show_cal")}),
-        close_sep()
+        open_sep(color1),
+        widget.Clock(**base(fg=7), format="󰸗 %d %b, %Y 󰥔 %H:%M", mouse_callbacks={"Button1": lazy.spawn("show_cal")}),
+        close_sep(color1)
     ]
 
 
 def workspaces():
     return [
         widget.GroupBox(
-            **base(),
+            **base(fg=6),
             disable_drag = True,
             center_aligned = True,
             margin_y = 3,
@@ -158,13 +169,13 @@ def workspaces():
             borderwidth = 3,
             highlight_method = "line",
             rounded = True,
-            inactive = cl[1],
-            active = cl[5],
-            highlight_color = cl[3],
-            this_current_screen_border = cl[5],
-            this_screen_border = cl[5],
-            other_current_screen_border = cl[2],
-            other_screen_border = cl[2],
+            inactive = color1,
+            active = color1,
+            highlight_color = inactive,
+            this_current_screen_border = color3,
+            this_screen_border = color3,
+            other_current_screen_border = color4,
+            other_screen_border = color4,
         ),
     ]
 
@@ -198,6 +209,7 @@ screens = [
             sep(),
             *workspaces(),
             sep(),
+            *test(),
             *current_lay(),
         ],
         25,

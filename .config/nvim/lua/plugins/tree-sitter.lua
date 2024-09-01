@@ -10,6 +10,7 @@ return {
       "python",
       "markdown",
       "markdown_inline",
+      "c",
     },
     highlight = {
       enable = true,

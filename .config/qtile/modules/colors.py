@@ -9,13 +9,16 @@ monochrome = [
 
 
 tokyonight = [
-    ["#1a1b26", "#1a1b26"], # 0 dark background
-    ["#414868", "#414868"], # 1 grey
-    ["#c0caf5", "#c0caf5"], # 2 light active
-    ["#a9b1d6", "#a9b1d6"], # 3 text foreground
+    ["#1a1b26", "#1a1b26"], # 0 dark 
+    ["#414868", "#414868"], # 1 greys
+    ["#c0caf5", "#c0caf5"], # 2 light
+    ["#a9b1d6", "#a9b1d6"], # 3 text
     ["#7aa2f7", "#7aa2f7"], # 4 focus
     ["#787c99", "#787c99"], # 5 incative
     ["#f7768e", "#f7768e"], # 6 urgent
     ["#bb9af7", "#bb9af7"], # 7 color1
     ["#9ece6a", "#9ece6a"], # 8 color2
+    ["#73daca", "#73daca"], # 9 color3
+    ["#7dcfff", "#7dcfff"], # 10 color4
+    ["#e0af68", "#e0af68"], # 11 color5
 ]
