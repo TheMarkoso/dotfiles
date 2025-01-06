@@ -33,7 +33,7 @@ map('v', '<a-j>', ":m '>+1<cr>gv=gv", { noremap = true, silent = true })
 map('v', '<a-k>', ":m '<-2<cr>gv=gv", { noremap = true, silent = true })
 
 -- moverse al siguiente buffer usando tab
-map('n', '<tab>', ':BufferLineCyclePrev<cr>', { noremap = true, silent = true })
+map('n', '<tab>', ':BufferLineCycleNext<cr>', { noremap = true, silent = true })
 
 -- moverse al buffer anterior usando shift+tab
 map('n', '<s-tab>', ':BufferLineCyclePrev<cr>', { noremap = true, silent = true })
@@ -49,3 +49,9 @@ map('n', '<leader>w', ':w<CR>', default_opts)
 
 -- Save and quit
 map('n', '<leader>x', ':wq<CR>', default_opts)
+
+
+-- Save and close current buffer
+map('n', '<leader>q', ':w<CR>:bd<CR>', {noremap = true, silent = true})
+
+map('n', '<c-t>', ':ToggleTerm<cr>', default_opts)       -- open/close

@@ -131,6 +131,7 @@ alias nst='nsxiv --thumbnail'
 
 alias cat='bat'
 
+alias hss='hugo server --noHTTPCache'
 
 alias py='python3'
 
@@ -142,3 +143,10 @@ alias avenv='. venv/bin/activate'
 eval "$(starship init zsh)"
 
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH=:"$HOME/.local/bin:$PATH"
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$HOME/go/bin
+export PATH="$HOME/.local/share/gem/ruby/3.3.0/bin:$PATH"
+

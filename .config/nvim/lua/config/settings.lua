@@ -44,4 +44,5 @@ o.splitright = true
 o.splitbelow = true
 
 
-
+opt.tabstop = 4
+opt.shiftwidth = 4

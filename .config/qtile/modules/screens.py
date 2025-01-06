@@ -21,6 +21,7 @@ color2 = cl[8]
 color3 = cl[9]
 color4 = cl[10]
 color5 = cl[11]
+newBG = cl[12]
 
 layout_theme = {"border_width": 2,
                 "margin": 4,
@@ -50,7 +51,7 @@ layouts = [
 #    background = cl[0]
 #)
 
-def base(fg=3, bg=0, fontsize=15, font='HackNerdFont', padding=3): 
+def base(fg=3, bg=12, fontsize=15, font='HackNerdFont', padding=3): 
     return {
         'foreground': cl[fg],
         'background': cl[bg],
@@ -61,18 +62,18 @@ def base(fg=3, bg=0, fontsize=15, font='HackNerdFont', padding=3):
 
 
 def open_sep(fg): 
-    return  widget.TextBox(foreground=fg, background=cl[0], font='HackNerdFont', padding=3, fontsize=15, text = '[')
+    return  widget.TextBox(foreground=fg, background=cl[12], font='HackNerdFont', padding=3, fontsize=15, text = '[')
 
 
 def close_sep(fg): 
-    return  widget.TextBox(foreground=fg, background=cl[0], font='HackNerdFont', padding=3, fontsize=15, text = ']')
+    return  widget.TextBox(foreground=fg, background=cl[12], font='HackNerdFont', padding=3, fontsize=15, text = ']')
 
 
 def icon():
     return [
-        open_sep(color1),
-        widget.TextBox(**base(fg=7),text = '󰟪'),
-        close_sep(color1)
+        open_sep(color2),
+        widget.TextBox(**base(fg=8),text = '󰟪'),
+        close_sep(color2)
     ]
 
 
@@ -104,7 +105,6 @@ def net():
 def current_lay():
     return [
         open_sep(urgent),
-        #widget.CurrentLayoutIcon(**base(fg=6), custom_icon_paths=[os.path.expanduser("~/.config/qtile/icons")], scale=0.7),
         widget.CurrentLayout(**base(fg=6)),
         close_sep(urgent)
     ] 
@@ -170,7 +170,7 @@ def workspaces():
             highlight_method = "line",
             rounded = True,
             inactive = color1,
-            active = color1,
+            active = urgent,
             highlight_color = inactive,
             this_current_screen_border = color3,
             this_screen_border = color3,

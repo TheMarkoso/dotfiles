@@ -21,4 +21,5 @@ tokyonight = [
     ["#73daca", "#73daca"], # 9 color3
     ["#7dcfff", "#7dcfff"], # 10 color4
     ["#e0af68", "#e0af68"], # 11 color5
+    ["#11121d", "#11121d"], # 12 newBG
 ]

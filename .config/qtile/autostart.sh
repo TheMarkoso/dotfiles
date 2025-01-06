@@ -12,4 +12,4 @@
 picom &
 #udiskie -t &
 # Wallpaper
-feh --bg-fill ~/Wallpapers/dg51hlb-8a1a4ebd-54bc-414f-90e5-e910ba2419c2.png &
+feh --bg-fill ~/Wallpapers/kaneda.png &

@@ -49,7 +49,7 @@ keys = [
     Key('M-S-r',                    lazy.spawn(redshift_off),               desc='Kill Redshift'),
     Key('M-s',                      lazy.spawn(screenshot),                 desc='Launch Screenshot Tool'),
     Key('M-S-s',                    lazy.spawn(screenshot_manual),          desc='Launch Screenshot Manual'),
-
+    #Key('M-o',                    lazy.spawn(screenshot_manual),          desc='Launch Screenshot Manual'),
     # Media Hotkeys
     # you need install "pulsectl_asymcio"
     Key('<XF86AudioRaiseVolume>',   lazy.spawn(volume_up),                  desc='Raise Volume'),

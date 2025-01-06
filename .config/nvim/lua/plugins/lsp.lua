@@ -1,3 +1,7 @@
+-- Habilitar soporte para fragmentos de código
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
@@ -28,5 +32,15 @@ return {
 
     require("lspconfig").pyright.setup({})
     require("lspconfig").clangd.setup({})
+    require("lspconfig").html.setup({
+      capabilities = capabilities,
+      settings = {
+        html = {
+          format = {
+            enable = true
+          }
+        }
+      }
+    })
   end
 }
