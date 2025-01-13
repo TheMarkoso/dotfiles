@@ -11,6 +11,7 @@ return {
       "markdown",
       "markdown_inline",
       "c",
+      "html",
     },
     highlight = {
       enable = true,

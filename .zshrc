@@ -101,6 +101,7 @@ source $ZSH/oh-my-zsh.sh
 # - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
 #
+
 # ALIASES 
 
 alias grub-update="sudo grub-mkconfig -o /boot/grub/grub.cfg"
@@ -119,7 +120,9 @@ alias l='eza -la --icons --color auto'
 alias ls='eza --icons --color auto'
 
 
-alias z='nohup zathura'
+book() {
+	nohup zathura "$1" > /dev/null 2>&1 &
+}
 
 
 alias nv='nvim'
@@ -134,6 +137,8 @@ alias cat='bat'
 alias hss='hugo server --noHTTPCache'
 
 alias py='python3'
+
+#alias mates='cd ~/Media/PDFs/Matematicas/guia-mate'
 
 # CREA UN ENTORNO VIRTUAL
 alias pyvenv='python3 -m venv venv'
